@@ -1,0 +1,18 @@
+$def with (db, key, link) 
+<h2>Single Message Log </h2>
+<br />
+
+<pre>
+ Message Key: <a href=$key>$key</a><br />
+$:db[key]
+
+
+ Message-Body:
+
+<iframe src=$link width="98%" height="35%">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+
+<a href='/'>Back</a>
+</pre>

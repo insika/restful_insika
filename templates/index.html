@@ -1,0 +1,47 @@
+$def with (userList, db, keyList) 
+<h2>RESTful INSIKA Interface Logging</h2>
+<pre>
+NOTE: This server is designed for development and conformance tests on 
+application level only. Do not use in productive environments!
+
+Log messages can be accessed via: <font color="SlateGrey">
+http://[server]:[port]/[messageKey] </font>
+while 'messageKey' is the server's unix time.
+
+Lists of shifts and trips can be accessed via: <font color="SlateGrey">
+http://[server]:[port]/insika/[tpId]/[tpIdNo]/shifts/
+http://[server]:[port]/insika/[tpId]/[tpIdNo]/trips/ </font>
+
+Message bodies (INSIKA XML messages) can be accessed via: <font color="SlateGrey">
+http://[server]:[port]/insika/[tpId]/[tpIdNo]/shifts/[seqNoReport] 
+http://[server]:[port]/insika/[tpId]/[tpIdNo]/trips/[seqNoTransaction] </font>
+or by following the corresponding links on this page.
+
+The serverlist can be accessed via: <font color="SlateGrey">
+http://[server]:[port]/insika/servers 
+http://[server]:[port]/insika/[tpId]/[tpIdNo]/servers/ </font>
+</pre>
+
+<tt>
+Registered tpId/tpIdNo's are:<br />
+$for user in userList:
+   $user
+</tt>
+<pre>
+
+<b>Last 4 logged messages: </b>
+(refresh page for current list)
+
+$for key in keyList[0:4]:
+     Message Key: <a href=$key>$key</a>
+    $:db[key]
+
+...
+</pre>
+<tt>
+List of all logged messages:<br />
+
+$for key in keyList: 
+        <a href=$key>$key</a>
+
+</tt>
