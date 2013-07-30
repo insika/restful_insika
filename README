@@ -1,3 +1,19 @@
-RESTful INSIKA 
+restful_insika
 
-very simple testserver
+very simple testserver for the RESTful INSIKA Interface
+
+
+this example has been tested to work with version web.py-0.37
+
+install web.py first:
+download web.py: http://webpy.org/static/
+extract the folders into a working directory, 
+change into the directory
+run "python setup.py install"
+
+copy db, serverlist, templates, restful_insika.py into working directory
+
+type: "python restful_insika.py"
+and point your browser to 
+http://localhost:8080/
+
